@@ -1,0 +1,168 @@
+$minh: 100vh;
+$color1: rgb(198, 255, 193);
+$color2: rgb(255, 230, 193);
+$color3: rgb(2, 2, 107);
+
+.home {
+  text-align: center;
+
+  header {
+    min-height: $minh;
+    background-color: rgb(170, 249, 255);
+    background-image: linear-gradient(to bottom, $color3 5%, transparent 100%);
+    &:after {
+      content: "";
+      display: block;
+      min-height: $minh;
+    }
+    .starBox {
+      position: absolute;
+      top: 0px;
+      height: 500px;
+      width: 100%;
+      svg {
+        position: absolute;
+        &:nth-child(1) {
+          top: 60px;
+          right: 8%;
+          animation: star-shine infinite 1s linear;
+        }
+        &:nth-child(2) {
+          top: 115px;
+          left: 14%;
+          animation: star-shine infinite 1s 0.4s linear;
+        }
+        &:nth-child(3) {
+          top: 340px;
+          left: 34%;
+          animation: star-shine infinite 1s 0.8s linear;
+        }
+      }
+    }
+  }
+
+  h2 {
+    font-size: clamp(2rem, 1rem + 5vmin, 3rem);
+  }
+
+  .foreground {
+    position: sticky;
+    top: 0px;
+    min-height: $minh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    h2 {
+      color: $color1;
+    }
+    svg,
+    img {
+      object-fit: contain;
+    }
+  }
+
+  .sun-icon {
+    width: 270px;
+    height: 270px;
+    animation: logo-spin infinite 20s linear;
+    .group-1 {
+      transform-origin: 50% 50%;
+      animation: logo-light-g-1 infinite 2s linear;
+    }
+    .group-2 {
+      transform-origin: 50% 50%;
+      animation: logo-light-g-2 infinite 2s linear;
+    }
+  }
+
+  .temp-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    .link {
+      color: #61dafb;
+    }
+  }
+
+  section {
+    &:nth-child(even) {
+      background-color: $color2;
+    }
+
+    &:nth-child(odd) {
+      background-color: $color1;
+    }
+
+    &:not([class]) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: $minh;
+
+      &:nth-child(even) {
+        background-color: $color2;
+        border-radius: 30% 70% 70% 30% / 41% 30% 70% 59%;
+      }
+
+      &:nth-child(odd) {
+        background-color: $color1;
+        border-radius: 56% 44% 50% 50% / 41% 40% 60% 59%;
+      }
+    }
+  }
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes logo-light-g-1 {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.07);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes logo-light-g-2 {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.96);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes star-shine {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
