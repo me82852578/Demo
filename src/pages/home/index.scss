@@ -21,6 +21,7 @@ $fontFamily: monospace;
     }
     .starBox {
       position: absolute;
+      overflow: hidden;
       top: 0px;
       height: 500px;
       width: 100%;
@@ -53,19 +54,19 @@ $fontFamily: monospace;
       svg {
         position: absolute;
         &:nth-child(1) {
-          top: 70px;
-          right: 0%;
-          animation: cloud-move infinite 15s linear;
+          top: 10px;
+          right: calc(20% - 50px);
+          animation: cloud-move infinite 10s linear;
         }
         &:nth-child(2) {
-          top: 125px;
-          left: 0%;
-          animation: cloud-move infinite 15s 3s linear;
+          top: 131px;
+          left: calc(25vw - 90px);
+          animation: cloud-move infinite 10s 3s linear;
         }
         &:nth-child(3) {
           top: 360px;
-          right: 6%;
-          animation: cloud-move infinite 15s 5s linear;
+          right: calc(28% - 80px);
+          animation: cloud-move infinite 10s 5s linear;
         }
       }
     }
@@ -80,6 +81,7 @@ $fontFamily: monospace;
     align-items: center;
     justify-content: center;
     font-family: $fontFamily;
+    overflow: hidden;
     h1 {
       font-size: clamp(2rem, 1rem + 5vmin, 3rem);
       color: $color1;
@@ -206,13 +208,13 @@ $fontFamily: monospace;
     transform: translate(0%, 0%);
   }
   25% {
-    transform: translate(-5%, 0%);
+    transform: translate(-18%, 0%);
   }
   50% {
     transform: translate(0%, 0%);
   }
   75% {
-    transform: translate(5%, 0%);
+    transform: translate(18%, 0%);
   }
   100% {
     transform: translate(0%, 0%);
