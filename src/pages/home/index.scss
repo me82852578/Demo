@@ -6,12 +6,14 @@ $fontFamily: monospace;
 
 .home {
   text-align: center;
+  height: 100%;
 
   header {
     min-height: $minh;
+    width: 100%;
     // background-color: rgb(170, 249, 255);
     // background-image: linear-gradient(to bottom, $color3 5%, transparent 100%);
-    background: linear-gradient(to bottom, $color3 5%, rgb(170, 249, 255) 100%);
+    background: linear-gradient(to bottom, $color3 5%, rgb(169, 242, 255) 100%);
     &:after {
       content: "";
       display: block;
@@ -38,6 +40,32 @@ $fontFamily: monospace;
           top: 330px;
           left: 33%;
           animation: star-shine infinite 1s 0.8s linear;
+        }
+      }
+    }
+    .cloudBox {
+      overflow: hidden;
+      z-index: 1;
+      position: absolute;
+      top: 140%;
+      height: 500px;
+      width: 100%;
+      svg {
+        position: absolute;
+        &:nth-child(1) {
+          top: 70px;
+          right: 0%;
+          animation: cloud-move infinite 15s linear;
+        }
+        &:nth-child(2) {
+          top: 125px;
+          left: 0%;
+          animation: cloud-move infinite 15s 3s linear;
+        }
+        &:nth-child(3) {
+          top: 360px;
+          right: 6%;
+          animation: cloud-move infinite 15s 5s linear;
         }
       }
     }
@@ -69,7 +97,7 @@ $fontFamily: monospace;
       overflow: hidden;
       border-right: 2px solid orange;
       white-space: nowrap;
-      letter-spacing: 1px; 
+      letter-spacing: 1px;
       animation: typing 3.5s steps(35), cursor-blink 0.8s step-end infinite;
       margin: 30px 0 30px 0;
     }
@@ -92,7 +120,7 @@ $fontFamily: monospace;
 
   section {
     h2 {
-      color:rgb(52, 54, 99);
+      color: rgb(52, 54, 99);
       font-size: clamp(2rem, 1rem + 5vmin, 3rem);
     }
     &:nth-child(even) {
@@ -170,6 +198,24 @@ $fontFamily: monospace;
   }
   100% {
     transform: scale(1);
+  }
+}
+
+@keyframes cloud-move {
+  0% {
+    transform: translate(0%, 0%);
+  }
+  25% {
+    transform: translate(-5%, 0%);
+  }
+  50% {
+    transform: translate(0%, 0%);
+  }
+  75% {
+    transform: translate(5%, 0%);
+  }
+  100% {
+    transform: translate(0%, 0%);
   }
 }
 

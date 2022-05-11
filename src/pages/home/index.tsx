@@ -1,6 +1,7 @@
 import React from "react";
 import { ReactComponent as SunIcon } from "./sun.svg";
 import { ReactComponent as StarIcon } from "./star.svg";
+import { ReactComponent as CloudIcon } from "./cloud.svg";
 import { ReactComponent as PeaceIcon } from "./peace.svg";
 import "./index.scss";
 
@@ -12,6 +13,11 @@ function Home() {
           <StarIcon height="23px" />
           <StarIcon height="15px" />
           <StarIcon height="10px" />
+        </div>
+        <div className="cloudBox">
+          <CloudIcon height="80px" fill="white"/>
+          <CloudIcon height="160px" fill="white"/>
+          <CloudIcon height="120px" fill="white"/>
         </div>
         <div className="foreground">
           <h1>Jay's Demo Space</h1>
