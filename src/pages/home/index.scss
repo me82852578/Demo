@@ -1,15 +1,17 @@
 $minh: 100vh;
-$color1: rgb(198, 255, 193);
+$color1: rgb(253, 255, 118);
 $color2: rgb(255, 230, 193);
 $color3: rgb(2, 2, 107);
+$fontFamily: monospace;
 
 .home {
   text-align: center;
 
   header {
     min-height: $minh;
-    background-color: rgb(170, 249, 255);
-    background-image: linear-gradient(to bottom, $color3 5%, transparent 100%);
+    // background-color: rgb(170, 249, 255);
+    // background-image: linear-gradient(to bottom, $color3 5%, transparent 100%);
+    background: linear-gradient(to bottom, $color3 5%, rgb(170, 249, 255) 100%);
     &:after {
       content: "";
       display: block;
@@ -41,10 +43,6 @@ $color3: rgb(2, 2, 107);
     }
   }
 
-  h2 {
-    font-size: clamp(2rem, 1rem + 5vmin, 3rem);
-  }
-
   .foreground {
     position: sticky;
     top: 0px;
@@ -53,42 +51,50 @@ $color3: rgb(2, 2, 107);
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    h2 {
+    font-family: $fontFamily;
+    h1 {
+      font-size: clamp(2rem, 1rem + 5vmin, 3rem);
       color: $color1;
+      padding-bottom: 40px;
+    }
+    p {
+      font-size: calc(13px + 1vmin);
+      color: whitesmoke;
     }
     svg,
     img {
       object-fit: contain;
+    }
+    .typing-effect p {
+      color: #fff;
+      overflow: hidden; /* Ensures the content is not revealed until the animation */
+      border-right: 0.15em solid orange; /* The typwriter cursor */
+      white-space: nowrap; /* Keeps the content on a single line */
+      margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+      letter-spacing: 0.15em; /* Adjust as needed */
+      animation: typing 3.5s steps(30), cursor-blink 0.8s step-end infinite;
+      margin-bottom: 40px;
     }
   }
 
   .sun-icon {
     width: 270px;
     height: 270px;
-    animation: logo-spin infinite 20s linear;
+    animation: sun-spin infinite 20s linear;
     .group-1 {
       transform-origin: 50% 50%;
-      animation: logo-light-g-1 infinite 2s linear;
+      animation: sun-shine-g-1 infinite 2s linear;
     }
     .group-2 {
       transform-origin: 50% 50%;
-      animation: logo-light-g-2 infinite 2s linear;
-    }
-  }
-
-  .temp-text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-    .link {
-      color: #61dafb;
+      animation: sun-shine-g-2 infinite 2s linear;
     }
   }
 
   section {
+    h2 {
+      font-size: clamp(2rem, 1rem + 5vmin, 3rem);
+    }
     &:nth-child(even) {
       background-color: $color2;
     }
@@ -116,7 +122,7 @@ $color3: rgb(2, 2, 107);
   }
 }
 
-@keyframes logo-spin {
+@keyframes sun-spin {
   from {
     transform: rotate(360deg);
   }
@@ -125,7 +131,7 @@ $color3: rgb(2, 2, 107);
   }
 }
 
-@keyframes logo-light-g-1 {
+@keyframes sun-shine-g-1 {
   0% {
     transform: scale(1);
   }
@@ -137,7 +143,7 @@ $color3: rgb(2, 2, 107);
   }
 }
 
-@keyframes logo-light-g-2 {
+@keyframes sun-shine-g-2 {
   0% {
     transform: scale(1);
   }
@@ -154,15 +160,34 @@ $color3: rgb(2, 2, 107);
     transform: scale(1);
   }
   25% {
-    transform: scale(1.1);
+    transform: scale(1.15);
   }
   50% {
     transform: scale(1);
   }
   75% {
-    transform: scale(0.9);
+    transform: scale(0.85);
   }
   100% {
     transform: scale(1);
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes cursor-blink {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
   }
 }
