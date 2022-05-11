@@ -1,7 +1,6 @@
 $minh: 100vh;
 $color1: rgb(253, 255, 118);
 $color2: rgb(255, 230, 193);
-$color3: rgb(2, 2, 107);
 $fontFamily: monospace;
 
 .home {
@@ -11,9 +10,7 @@ $fontFamily: monospace;
   header {
     min-height: $minh;
     width: 100%;
-    // background-color: rgb(170, 249, 255);
-    // background-image: linear-gradient(to bottom, $color3 5%, transparent 100%);
-    background: linear-gradient(to bottom, $color3 5%, rgb(169, 242, 255) 100%);
+    background: linear-gradient(to bottom, rgb(2, 2, 107) 5%, rgb(169, 242, 255) 100%);
     &:after {
       content: "";
       display: block;
