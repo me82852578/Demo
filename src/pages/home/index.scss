@@ -123,37 +123,6 @@ $fontFamily: monospace;
       animation: sun-shine-g-2 infinite 2s linear;
     }
   }
-
-  section {
-    h2 {
-      color: rgb(52, 54, 99);
-      font-size: clamp(2rem, 1rem + 5vmin, 3rem);
-    }
-    &:nth-child(even) {
-      background-color: $color2;
-    }
-
-    &:nth-child(odd) {
-      background-color: $color1;
-    }
-
-    &:not([class]) {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: $minh;
-
-      &:nth-child(even) {
-        background-color: $color2;
-        border-radius: 30% 70% 70% 30% / 41% 30% 70% 59%;
-      }
-
-      &:nth-child(odd) {
-        background-color: $color1;
-        border-radius: 56% 44% 50% 50% / 41% 40% 60% 59%;
-      }
-    }
-  }
 }
 
 @keyframes sun-spin {

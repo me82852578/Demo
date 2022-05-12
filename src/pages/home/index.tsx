@@ -1,9 +1,21 @@
 import React from "react";
-import { ReactComponent as SunIcon } from "./sun.svg";
-import { ReactComponent as StarIcon } from "./star.svg";
-import { ReactComponent as CloudIcon } from "./cloud.svg";
-import { ReactComponent as PeaceIcon } from "./peace.svg";
+import { ReactComponent as SunIcon } from "./images/sun.svg";
+import { ReactComponent as StarIcon } from "./images/star.svg";
+import { ReactComponent as CloudIcon } from "./images/cloud.svg";
+import { ReactComponent as PeaceIcon } from "./images/peace.svg";
 import "./index.scss";
+import {
+  Card,
+  CardActionArea,
+  CardContent,
+  CardMedia,
+  Container,
+  Grid,
+  Paper,
+  Typography,
+} from "@mui/material";
+import { makeFakeProducts, makeFakeSkills } from "./fakeData";
+import { Box, width } from "@mui/system";
 
 function Home() {
   return (
@@ -15,9 +27,9 @@ function Home() {
           <StarIcon height="10px" />
         </div>
         <div className="cloudBox">
-          <CloudIcon height="80px" fill="white"/>
-          <CloudIcon height="160px" fill="white"/>
-          <CloudIcon height="120px" fill="white"/>
+          <CloudIcon height="80px" fill="white" />
+          <CloudIcon height="160px" fill="white" />
+          <CloudIcon height="120px" fill="white" />
         </div>
         <div className="foreground">
           <h1>Jay's Demo Space</h1>
@@ -32,23 +44,78 @@ function Home() {
           />
           <div className="temp-text">
             <p>
-              Hope the world peace. <PeaceIcon height="42px" stroke="whitesmoke" fill="whitesmoke" />
+              Hope the world peace.{" "}
+              <PeaceIcon height="42px" stroke="whitesmoke" fill="whitesmoke" />
             </p>
           </div>
         </div>
       </header>
-      <section>
-        <h2>Section 1</h2>
-      </section>
-      <section>
-        <h2>Section 2</h2>
-      </section>
-      <section>
-        <h2>Section 3</h2>
-      </section>
-      <section>
-        <h2>Section 4</h2>
-      </section>
+      <Container maxWidth="lg">
+        <Box sx={{ padding: "50px 0", width: "100%" }}>
+          <Grid container spacing={4}>
+            {makeFakeSkills().map((s) => (
+              <Grid key={s.id} item md={3}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    gap: "16px",
+                    boxShadow: "0px 4px 16px rgb(43 52 69 / 10%)",
+                    borderRadius: "8px",
+                    padding: "1.5rem",
+                  }}
+                >
+                  <Box>
+                    <img width="42px" src={s.img} alt={s.title} />
+                  </Box>
+                  <Box>
+                    <Typography
+                      variant="subtitle1"
+                      color="#2B3445"
+                      fontWeight={700}
+                    >
+                      {s.title}
+                    </Typography>
+                    <Typography variant="body2" color="#7D879C">
+                      {s.description}
+                    </Typography>
+                  </Box>
+                </Box>
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
+        <Box sx={{ display: "flex" }}>
+          <Paper sx={{ height: "100vh", width: "280px" }}>1231321321313</Paper>
+          <Box width="fit-content" ml={2}>
+            <Grid container spacing={3}>
+              {makeFakeProducts(10).map((p) => (
+                <Grid key={p.id} item lg={3}>
+                  <Card>
+                    <CardActionArea>
+                      <CardMedia
+                        component="img"
+                        height="140"
+                        image={p.img}
+                        alt={p.name}
+                      />
+                      <CardContent>
+                        <Typography gutterBottom variant="h5" component="div">
+                          Lizard
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          Lizards are a widespread group of squamate reptiles,
+                          with over 6,000 species, ranging across all continents
+                          except Antarctica
+                        </Typography>
+                      </CardContent>
+                    </CardActionArea>
+                  </Card>
+                </Grid>
+              ))}
+            </Grid>
+          </Box>
+        </Box>
+      </Container>
     </div>
   );
 }
