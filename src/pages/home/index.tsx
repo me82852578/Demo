@@ -15,7 +15,7 @@ import {
   Typography,
 } from "@mui/material";
 import { makeFakeProducts, makeFakeSkills } from "./fakeData";
-import { Box, width } from "@mui/system";
+import { Box } from "@mui/system";
 
 function Home() {
   return (
@@ -100,13 +100,16 @@ function Home() {
                       />
                       <CardContent>
                         <Typography gutterBottom variant="h5" component="div">
-                          Lizard
+                          Product
                         </Typography>
-                        <Typography variant="body2" color="text.secondary">
-                          Lizards are a widespread group of squamate reptiles,
-                          with over 6,000 species, ranging across all continents
-                          except Antarctica
-                        </Typography>
+                        <Box sx={{display:"flex", gap:'8px'}}>
+                          <Typography variant="body2" color="text.secondary">
+                            {`$${p.regularPrice}`}
+                          </Typography>
+                          <Typography variant="body2" color="text.secondary">
+                            {p.salePrice}
+                          </Typography>
+                        </Box>
                       </CardContent>
                     </CardActionArea>
                   </Card>
