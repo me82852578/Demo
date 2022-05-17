@@ -50,7 +50,7 @@ function Home() {
           </div>
         </div>
       </header>
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" sx={{ position: "relative" }}>
         <Box sx={{ padding: "50px 0", width: "100%" }}>
           <Grid container spacing={4}>
             {makeFakeSkills().map((s) => (
@@ -84,13 +84,31 @@ function Home() {
             ))}
           </Grid>
         </Box>
-        <Box sx={{ display: "flex" }}>
-          <Paper sx={{ height: "100vh", width: "280px" }}>1231321321313</Paper>
+        <Box
+          sx={{
+            display: "flex",
+            overflow: "auto",
+            position: "relative",
+            paddingBottom: "30px",
+          }}
+        >
+          <Paper
+            sx={{
+              height: "inherit",
+              width: "260px",
+              position: "sticky",
+              top: "0px",
+              boxShadow: "0px 4px 16px rgb(43 52 69 / 10%)",
+              flexShrink: 0,
+            }}
+          >
+            Side nav
+          </Paper>
           <Box width="fit-content" ml={2}>
             <Grid container spacing={3}>
-              {makeFakeProducts(10).map((p) => (
+              {makeFakeProducts(20).map((p) => (
                 <Grid key={p.id} item lg={3}>
-                  <Card>
+                  <Card sx={{ boxShadow: "0px 1px 3px rgb(3 0 71 / 9%)" }}>
                     <CardActionArea>
                       <CardMedia
                         component="img"
@@ -102,7 +120,7 @@ function Home() {
                         <Typography gutterBottom variant="h5" component="div">
                           Product
                         </Typography>
-                        <Box sx={{display:"flex", gap:'8px'}}>
+                        <Box sx={{ display: "flex", gap: "8px" }}>
                           <Typography variant="body2" color="text.secondary">
                             {`$${p.regularPrice}`}
                           </Typography>
@@ -118,6 +136,28 @@ function Home() {
             </Grid>
           </Box>
         </Box>
+        <Paper
+          sx={{
+            height: "250px",
+            boxShadow: "0px 1px 3px rgb(3 0 71 / 9%)",
+            padding: "40px",
+            margin: "40px 0",
+            backgroundColor: "antiquewhite",
+            color: "whitesmoke",
+            borderRadius: "8px",
+          }}
+        ></Paper>
+        <Paper
+          sx={{
+            height: "250px",
+            boxShadow: "0px 1px 3px rgb(3 0 71 / 9%)",
+            padding: "40px",
+            margin: "40px 0",
+            backgroundColor: "antiquewhite",
+            color: "whitesmoke",
+            borderRadius: "8px",
+          }}
+        ></Paper>
       </Container>
     </div>
   );

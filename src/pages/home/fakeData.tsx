@@ -14,7 +14,7 @@ export const makeFakeProducts = (len: number): Product[] => {
   const product: Product = {
     id: "",
     name: "Product",
-    img: "https://mui.com/static/images/cards/live-from-space.jpg",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeYu5-K2IXfSZ8OaGiW1K_AoIQbY8O9MZdutvjIQs-WHF3b-Y_X_43YA5y3bXaeG2_4dQ&usqp=CAU",
     category: "",
     tags: [""],
     description: "",
