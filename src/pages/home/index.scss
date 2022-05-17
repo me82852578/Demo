@@ -123,9 +123,11 @@ $fontFamily: monospace;
     }
   }
 
-  // .product-side-nav{
-
-  // }
+  @media (max-width: 764px) {
+    .product-side-nav {
+      display: none;
+    }
+  }
 }
 
 @keyframes sun-spin {

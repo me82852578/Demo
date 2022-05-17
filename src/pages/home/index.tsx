@@ -54,7 +54,7 @@ function Home() {
         <Box sx={{ padding: "50px 0", width: "100%" }}>
           <Grid container spacing={4}>
             {makeFakeSkills().map((s) => (
-              <Grid key={s.id} item md={3}>
+              <Grid key={s.id} item md={3} sm={6} xs={12}>
                 <Box
                   sx={{
                     display: "flex",
@@ -62,6 +62,7 @@ function Home() {
                     boxShadow: "0px 4px 16px rgb(43 52 69 / 10%)",
                     borderRadius: "8px",
                     padding: "1.5rem",
+                    width:"100%",
                   }}
                 >
                   <Box>
@@ -93,6 +94,7 @@ function Home() {
           }}
         >
           <Paper
+          className="product-side-nav"
             sx={{
               height: "inherit",
               width: "260px",
@@ -107,7 +109,7 @@ function Home() {
           <Box width="fit-content" ml={2}>
             <Grid container spacing={3}>
               {makeFakeProducts(20).map((p) => (
-                <Grid key={p.id} item lg={3}>
+                <Grid key={p.id} item lg={3} md={4} sm={6} xs={12}>
                   <Card sx={{ boxShadow: "0px 1px 3px rgb(3 0 71 / 9%)" }}>
                     <CardActionArea>
                       <CardMedia
