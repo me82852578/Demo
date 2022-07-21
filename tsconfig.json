@@ -5,7 +5,7 @@
       "es6",
       "dom",
       "dom.iterable",
-      "esnext"
+      "esnext",
     ],
     "noImplicitAny": true,
     "noImplicitThis": true,
