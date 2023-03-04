@@ -8,18 +8,19 @@
 
 1. Install dependencies packages.
 
-   ```
+   ```sh
     yarn install
    ```
 
 2. Start
 
-   ```
+   ```sh
    yarn start
    ```
 
 3. Deploy
-   ```
+
+   ```sh
    yarn build
    ```
 
