@@ -20,6 +20,7 @@ import {
 } from "@mui/material";
 import React, { Fragment } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
+import logo00 from "../../assets/images/logo/logo02.webp";
 
 const MainLayout = (props: AppBarProps) => {
   const navigate = useNavigate();
@@ -106,13 +107,30 @@ const MainLayout = (props: AppBarProps) => {
         }}
       >
         <Toolbar>
+          <Box
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            height="36px"
+            width="36px"
+            overflow="hidden"
+            mr="6px"
+          >
+            <Box
+              component={"img"}
+              src={logo00}
+              alt="J-Studio"
+              width="120%"
+              height="120%"
+            />
+          </Box>
           <Typography
             variant="h6"
             noWrap
             component="div"
             sx={{ display: { xs: "", sm: "block" } }}
           >
-            DEMO
+            J-Studio
           </Typography>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>

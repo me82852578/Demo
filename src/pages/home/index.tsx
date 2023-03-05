@@ -32,7 +32,7 @@ function Home() {
           <CloudIcon height="120px" fill="white" />
         </div>
         <div className="foreground">
-          <h1>Jay's Demo Space</h1>
+          <h1>J-Studio</h1>
           <div className="typing-effect">
             <p>If any questions, feel free to ask.</p>
           </div>
