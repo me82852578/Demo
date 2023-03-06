@@ -20,7 +20,7 @@ import {
 } from "@mui/material";
 import React, { Fragment } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
-import logo02 from "../../assets/images/logo/logo02-compress.webp";
+import logo02 from "../../assets/images/logo/logo02/logo02-128.png";
 
 const MainLayout = (props: AppBarProps) => {
   const navigate = useNavigate();
