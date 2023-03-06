@@ -20,7 +20,7 @@ import {
 } from "@mui/material";
 import React, { Fragment } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
-import logo00 from "../../assets/images/logo/logo02.webp";
+import logo02 from "../../assets/images/logo/logo02-compress.webp";
 
 const MainLayout = (props: AppBarProps) => {
   const navigate = useNavigate();
@@ -118,7 +118,7 @@ const MainLayout = (props: AppBarProps) => {
           >
             <Box
               component={"img"}
-              src={logo00}
+              src={logo02}
               alt="J-Studio"
               width="120%"
               height="120%"
