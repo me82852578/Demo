@@ -1,9 +1,4 @@
 import React from "react";
-import { ReactComponent as SunIcon } from "./images/sun.svg";
-import { ReactComponent as StarIcon } from "./images/star.svg";
-import { ReactComponent as CloudIcon } from "./images/cloud.svg";
-import { ReactComponent as PeaceIcon } from "./images/peace.svg";
-import "./index.scss";
 import {
   Card,
   CardActionArea,
@@ -16,40 +11,14 @@ import {
 } from "@mui/material";
 import { makeFakeProducts, makeFakeSkills } from "./fakeData";
 import { Box } from "@mui/system";
+import About from "./about";
+import Header from "./header";
 
 function Home() {
   return (
-    <div className="home">
-      <header>
-        <div className="starBox">
-          <StarIcon height="23px" />
-          <StarIcon height="15px" />
-          <StarIcon height="10px" />
-        </div>
-        <div className="cloudBox">
-          <CloudIcon height="80px" fill="white" />
-          <CloudIcon height="160px" fill="white" />
-          <CloudIcon height="120px" fill="white" />
-        </div>
-        <div className="foreground">
-          <h1>J-Studio</h1>
-          <div className="typing-effect">
-            <p>If any questions, feel free to ask.</p>
-          </div>
-          <SunIcon
-            height="200px"
-            width="200px"
-            viewBox="-44 -44 600 600"
-            className="sun-icon"
-          />
-          <div className="temp-text">
-            <p>
-              Hope the world peace.{" "}
-              <PeaceIcon height="42px" stroke="whitesmoke" fill="whitesmoke" />
-            </p>
-          </div>
-        </div>
-      </header>
+    <Box className="home" height="100%">
+      <Header />
+      <About />
       <Container maxWidth="lg" sx={{ position: "relative" }}>
         <Box sx={{ padding: "50px 0", width: "100%" }}>
           <Grid container spacing={4}>
@@ -62,12 +31,16 @@ function Home() {
                     boxShadow: "0px 4px 16px rgb(43 52 69 / 10%)",
                     borderRadius: "8px",
                     padding: "1.5rem",
-                    width:"100%",
+                    width: "100%",
                   }}
                 >
-                  <Box>
-                    <img width="42px" src={s.img} alt={s.title} />
-                  </Box>
+                  <Box
+                    component="img"
+                    width="42px"
+                    height={"42px"}
+                    src={s.img}
+                    alt={s.title}
+                  />
                   <Box>
                     <Typography
                       variant="subtitle1"
@@ -94,7 +67,7 @@ function Home() {
           }}
         >
           <Paper
-          className="product-side-nav"
+            className="product-side-nav"
             sx={{
               height: "inherit",
               width: "260px",
@@ -161,7 +134,7 @@ function Home() {
           }}
         ></Paper>
       </Container>
-    </div>
+    </Box>
   );
 }
 
