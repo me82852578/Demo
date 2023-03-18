@@ -19,7 +19,7 @@ function About() {
             position="relative"
             zIndex={1}
           >
-            關於我們
+            關於
           </Typography>
           <Stack spacing={2} textAlign="left">
             <Typography component="p" variant="body1">
