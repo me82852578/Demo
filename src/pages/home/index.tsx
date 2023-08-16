@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Card,
   CardActionArea,
@@ -6,6 +5,11 @@ import {
   CardMedia,
   Container,
   Grid,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
   Paper,
   Typography,
 } from "@mui/material";
@@ -13,6 +17,21 @@ import { makeFakeProducts, makeFakeSkills } from "./fakeData";
 import { Box } from "@mui/system";
 import About from "./about";
 import Header from "./header";
+import { LogoDevRounded } from "@mui/icons-material";
+import { Link } from "react-router-dom";
+
+const sidebarItems = [
+  {
+    text: "Page1",
+    icon: <LogoDevRounded />,
+    link: "/page-1",
+  },
+  {
+    text: "Page2",
+    icon: <LogoDevRounded />,
+    link: "/page-2",
+  },
+];
 
 function Home() {
   return (
@@ -77,7 +96,16 @@ function Home() {
               flexShrink: 0,
             }}
           >
-            Side nav
+            <List>
+              {sidebarItems.map((item) => (
+                <ListItem key={item.text} disablePadding>
+                  <ListItemButton component={Link} to={item.link}>
+                    <ListItemIcon>{item.icon}</ListItemIcon>
+                    <ListItemText primary={item.text} />
+                  </ListItemButton>
+                </ListItem>
+              ))}
+            </List>
           </Paper>
           <Box width="fit-content" ml={2}>
             <Grid container spacing={3}>
