@@ -105,6 +105,7 @@ $fontFamily: monospace;
     // }
     .sun-icon {
       position: absolute;
+      z-index: 1;
       top: 58%;
       left: calc(5%);
       width: calc(30px + 20vw);
@@ -134,6 +135,7 @@ $fontFamily: monospace;
     justify-content: center;
     font-family: $fontFamily;
     overflow: hidden;
+    pointer-events: none;
     h1 {
       font-size: clamp(2rem, 1rem + 5vmin, 3rem);
       color: $color1;

@@ -60,5 +60,20 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script>
+      (function myfunction() {
+        if (navigator.userAgent.match(/Android/i)) {
+          console.info("android");
+        } else if (
+          navigator.userAgent.match(/iPhone/i) ||
+          navigator.userAgent.match(/iPad/i) ||
+          navigator.userAgent.match(/iPod/i)
+        ) {
+          console.info("ios");
+        } else {
+          console.info("desktop");
+        }
+      })();
+    </script>
   </body>
 </html>
